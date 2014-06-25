@@ -44,18 +44,20 @@ def decompress_symbol(symbol, dictionary, delimiter, stream = sys.stdout):
 		#print ( "word without delimiter \"%s\"" % word
 		stream.write( delimiter + word)
 		return " "
-		
-			
-if __name__ == "__main__":
-	inputfile = open(sys.argv[1]).readlines()
-	dictionary, data = parse_input(inputfile)
+def decompress(text, output=sys.stdout):
+	dictionary, data = parse_input(text)
 	clean_dictionary = []
 	clean_dictionary = [word.lower().strip() for word in dictionary]
+	
 	for line in data:
 		symbols = line.split(" ")
 		delimiter = ""
 		for symbol in symbols:
-			delimiter = decompress_symbol(symbol.strip(), clean_dictionary, delimiter)
-		sys.stdout.write ("\n")
+			delimiter = decompress_symbol(symbol.strip(), clean_dictionary, delimiter, output)
+		
+			
+if __name__ == "__main__":
+	inputfile = open(sys.argv[1]).readlines()
+	decompress(inputfile)
 
 	
