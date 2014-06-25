@@ -31,7 +31,7 @@ def decompress_symbol(symbol, dictionary, delimiter):
 			return '-'
 		else: #any other punctuation etc.
 			sys.stdout.write(symbol)
-			return ""
+			return " "
 		return
 	#handle the numeric symbols now, first by handling the numeric part, then the postfix
 	else:
