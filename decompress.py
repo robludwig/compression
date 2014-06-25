@@ -50,8 +50,7 @@ if __name__ == "__main__":
 	inputfile = open(sys.argv[1]).readlines()
 	dictionary, data = parse_input(inputfile)
 	clean_dictionary = []
-	for word in dictionary:
-		clean_dictionary.append(word.lower().strip())
+	clean_dictionary = [word.lower().strip() for word in dictionary]
 	for line in data:
 		symbols = line.split(" ")
 		delimiter = ""
