@@ -1,4 +1,9 @@
 import sys
+'''
+Quick program to solve reddit challenge 163.
+Store the entirety of the input in a text file, then call compress.py input.txt to
+compress the file and output the compressed contents to the screen
+'''
 
 VALID_PUNCTUATION = [ '.', ',', '?', '!', ';', ':']
 
