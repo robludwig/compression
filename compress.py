@@ -5,7 +5,7 @@ Store the entirety of the input in a text file, then call compress.py input.txt 
 compress the file and output the compressed contents to the screen
 '''
 
-VALID_PUNCTUATION = [ '.', ',', '?', '!', ';', ':']
+VALID_PUNCTUATION = [ '.', ',', '?', '!', ';', ':'] #per the problem specification
 
 def compress(text):
 	dictionary = []

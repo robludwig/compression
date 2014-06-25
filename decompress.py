@@ -12,8 +12,8 @@ def parse_input(input_list):
 	dictionary_entries = input_list[1:dictionary_size + 1]
 	compressed_data = input_list[dictionary_size + 1:]
 	return dictionary_entries, compressed_data
-
-def decompress_symbol(symbol, dictionary, delimiter):
+	
+def decompress_symbol(symbol, dictionary, delimiter, stream = sys.stdout):
 	numeric_symbol = "".join([digit for digit in symbol if digit.isdigit()])
 	if not delimiter:
 		delimiter = ""
@@ -25,12 +25,12 @@ def decompress_symbol(symbol, dictionary, delimiter):
 		if symbol.lower() == 'r':
 			return '\n'
 		elif symbol.lower() == 'e':
-			sys.stdout.write( delimiter )
+			stream.write( delimiter )
 			return None #end of file...
 		elif symbol == '-':
 			return '-'
 		else: #any other punctuation etc.
-			sys.stdout.write(symbol)
+			stream.write(symbol)
 			return " "
 		return
 	#handle the numeric symbols now, first by handling the numeric part, then the postfix
@@ -42,7 +42,7 @@ def decompress_symbol(symbol, dictionary, delimiter):
 		elif symbol.endswith("^"):
 			word = word.capitalize()
 		#print ( "word without delimiter \"%s\"" % word
-		sys.stdout.write( delimiter + word)
+		stream.write( delimiter + word)
 		return " "
 		
 			
