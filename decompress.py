@@ -1,4 +1,11 @@
 import sys
+'''
+Quick program to solve reddit challenge 162.
+Store the entirety of the input in a text file, then call decompress.py input.txt to
+decompress the file and output it to the screen
+'''
+
+
 
 def parse_input(input_list):
 	dictionary_size = int(input_list[0])
