@@ -15,3 +15,9 @@ which has its solution in compress.py
 Both of these programs take a single line of input and can be invoked as python [de]compress.py filename.txt
 to compress or decompress a file.
 
+
+The final challenge, linked at 
+http://www.reddit.com/r/dailyprogrammer/comments/25o2bd/5162014_challenge_162_hard_novel_compression_pt_3/
+requires simply packaging up everything in a command line program, which I've added here as compressor.py
+
+The final program can be run using compressor.py [-c | -d] input.txt output.txt
